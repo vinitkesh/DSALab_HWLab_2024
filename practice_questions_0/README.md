@@ -2,18 +2,18 @@
 
 ## Linked Lists:
 
-1. [Code](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c)
+1. [[Code ]](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c)
 Implement linked list ADT with the following functions.  
     a. Insertion  
     b. Deletion  
     c. Display
 
-3. [Code](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c) Write a program to reverse a singly linked list.
+3. [[Code ]](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c) Write a program to reverse a singly linked list.
 
 4. Write a program to detect whether a loop exists in the linked list. The program should also
     print the starting node of the loop.
 
-5. [Code](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c)
+5. [[Code ]](https://github.com/vinitkesh/PD_Lab/blob/main/DSA_lab/code/LL1.c)
  Write a program to merge two linked lists alternatively.
 
 6. Write a program to merge two sorted linked lists into a single sorted list.
@@ -29,13 +29,13 @@ Implement linked list ADT with the following functions.
 8. Write a program to sort the elements in a singly linked list using selection sort.
 
 ## Stack:
-
-1. [Code](https://github.dev/vinitkesh/DSALab_HWLab_2024/tree/main/practice_questions_0/Stack1.c)
-Implement stack ADT with the following functions using arrays
+  
+1. [[Code ] ](https://github.dev/vinitkesh/DSALab_HWLab_2024/tree/main/practice_questions_0/Stack1.c)Implement stack ADT with the following functions using arrays  
     a) Push (a)  
     b) Pop ()  
     c) Peek ()  
     d) Display  
+  
 2. Implement stack ADT with the following functions using Linked Lists  
     Push (a)  
     Pop ()  
