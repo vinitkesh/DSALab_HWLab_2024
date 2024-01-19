@@ -34,7 +34,7 @@ Glossary:
 25. [Preorder Traversal and BST 	]()
 27. [Construct tree from preorder traversal 	]()
 
-## Mid- high : 
+## Mid - high : 
 
 28. [Minimum distance between two given nodes 	]()
 29. [Maximum sum leaf to root path Odd Even Level Difference]()
