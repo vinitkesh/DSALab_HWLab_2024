@@ -59,3 +59,26 @@ MAX_HEAPIFY(A,i){
 }  
 ```
 
+## HEAPSORT: 
+$$O(nlogn)$$
+
+#### - To restore the Max-heap property, call Max-heapify(A,1) in the n-1 size   
+
+#### - The heapsort algorithm then repeats this process
+for the max-heap of size n-1 down to a heap
+ of size 2
+
+```c
+
+HEAPSORT
+    BUILDHEAP(A)
+    for i=A.length-1 to 1
+        exchange A[0] , A[i]
+        A.heapsize  --
+        MAXHEAPIFY(A,0) 
+```
+
+![Alt text](image.png)
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+
