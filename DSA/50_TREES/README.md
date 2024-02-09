@@ -12,7 +12,7 @@
 | 9 Array to BST	| []() | []() |
 | 10 Largest value in each level of binary tree	| []() | []() |
 | 11 Maximum GCD of siblings of a binary tree	| []() | []() |
-| 12 Zigzag Tree Traversal	| []() | []() |
+| 12 Zigzag Tree Traversal	| []() | [GFG](https://www.geeksforgeeks.org/zigzag-tree-traversal/) |
 | 13 Inorder Successor in BST	| []() | []() |
 | 14 Kth Largest Element in a BST []() | []() |
 
