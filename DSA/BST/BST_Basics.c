@@ -6,7 +6,7 @@ struct Node
     struct Node *left;
     struct Node *right;
 };
-
+//gg
 typedef struct Node* node;
 
 node createNode(int data)
