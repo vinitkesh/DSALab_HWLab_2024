@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 struct Node
 {
     int data;
@@ -20,6 +20,8 @@ node createNode(int data)
 node insert(node root, int data);
 node delete(node root, int data);
 node search(node root, int data);
+node inorderSuccessor(node root);
+void printTree(node root);
 
 int main()
 {
@@ -74,10 +76,77 @@ int main()
         else if(option == 'e'){
             break;
         }
-    }
-    
-
-
+        else if(option == 'p'){
+            printTree(root);
+            printf("\n");
+        }
+        else{
+            printf("Invalid option\n");
+        }
+    } 
     
     return 0;
+}
+
+node search(node root, int data)
+    {
+        if(root == NULL || root->data == data){
+            return root;
+        }
+        if(data < root->data){
+            return search(root->left, data);
+        }
+        else{
+            return search(root->right, data);
+        }
+        return NULL;
+    }
+node insert(node root, int data){
+    if(root==NULL){
+        return createNode(data);
+    }
+    if(data < root->data){
+        root->left = insert(root->left, data);
+    }
+    else{
+        root->right = insert(root->right, data);
+    }
+}
+
+node delete(node root, int data){
+
+    // Case 0: If the tree is empty
+    if(root == NULL){
+        return root;
+    }
+    // Case 2 : If the data is smaller than the root
+    if(root-> left == NULL && root->right == NULL){
+        free(root);
+        return NULL;
+    }
+
+    else{
+        node temp = inorderSuccessor(search(root, data));
+        root->data = temp->data;
+        root->right = delete(root->right, temp->data);
+
+        return root;
+    }
+}
+
+node inorderSuccessor(node root){
+    node temp = root;
+    while(temp->left != NULL){
+        temp = temp->left;
+    }
+    return temp;
+}
+
+void printTree(node root){
+    if(root == NULL){
+        return;
+    }
+    printTree(root->left);
+    printf("%d ", root->data);
+    printTree(root->right);
 }
