@@ -32,8 +32,7 @@ int main()
     scanf("%d", &n);
 
     printf("Enter the elements: ");
-    for(int i = 0; i < n; i++)
-    {
+    for(int i = 0; i < n; i++){
         int data;
         scanf("%d", &data);
         root = insert(root, data);
