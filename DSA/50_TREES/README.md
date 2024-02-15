@@ -48,7 +48,7 @@
 | 38 Maximum sum of non adjacent nodes	| []() | []() |
 | 39 Largest BST in a Binary Tree	| []() | []() |
 | 40 Extreme nodes in alternate order	| []() | []() |
- 
+
 ## Level 3
 
 
