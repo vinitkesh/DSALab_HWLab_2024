@@ -6,9 +6,9 @@
 | 3 Mirror tree	| []() | []() |
 | 4 Symmetric Tree	| []() | []() |
 | 5 Diameter of tree	| []() | []() |
-| 6 Checked for Balanced tree	| [GFG](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/) | [Code]() |
+| 6 Checked for Balanced tree	|  |  |
 | 7 Children Sum Parent	| []() | []() |
-| 8 Check for BST	| []() | []() |
+| 8 Check for BST	| [GFG](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/) | [Notes](./notes/8_Check_BST.md) |
 | 9 Array to BST	| []() | []() |
 | 10 Largest value in each level of binary tree	| []() | []() |
 | 11 Maximum GCD of siblings of a binary tree	| []() | []() |
