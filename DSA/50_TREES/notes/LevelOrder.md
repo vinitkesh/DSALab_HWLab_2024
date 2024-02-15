@@ -1,4 +1,4 @@
-# Level Order Traversal (Breadth First Search or BFS) of Binary Tree
+# Level Order Traversal (BFS or Breadth First Search) of Binary Tree
 
 There are 2 methods of doing level order traversal:
 
@@ -6,95 +6,53 @@ There are 2 methods of doing level order traversal:
     - by finding height of a level order tree
     - Time Complexity: O(N2), where N is the number of nodes in the skewed tree.
     - Auxiliary Space: O(1) If the recursion stack is considered the space used is O(N).
-## C code for Naive:
-```c
-// Recursive C program for level
-// order traversal of Binary Tree
-#include <stdio.h>
-#include <stdlib.h>
 
-// A binary tree node has data,
-// pointer to left child
-// and a pointer to right child
-struct node {
-	int data;
-	struct node *left, *right;
-};
 
-// Function prototypes
-void printCurrentLevel(struct node* root, int level);
-int height(struct node* node);
-struct node* newNode(int data);
+# 2. Using Queue
 
-// Function to print level order traversal a tree
-void printLevelOrder(struct node* root)
-{
-	int h = height(root);
-	int i;
-	for (i = 1; i <= h; i++)
-		printCurrentLevel(root, i);
-}
+ 1. Use a queue of nodes
+ 2. Push the root into the Queue(if root is NULL, exit)
+ 3. while ( q.isempty () ) 
+    1. for(int i=0;i<q.size();i++)
+       1. node temp = q.front
+       2. print ( temp->data )
+ 	  
+       3. q.pop
+   
+       4. if(node->left !=NULL)
+          1. q.push(node->left)
+       5. if(node->right !=NULL)
+          1. q.push(node->right)
 
-// Print nodes at a current level
-void printCurrentLevel(struct node* root, int level)
-{
-	if (root == NULL)
-		return;
-	if (level == 1)
-		printf("%d ", root->data);
-	else if (level > 1) {
-		printCurrentLevel(root->left, level - 1);
-		printCurrentLevel(root->right, level - 1);
-	}
-}
+```cpp
 
-// Compute the "height" of a tree -- the number of
-// nodes along the longest path from the root node
-// down to the farthest leaf node
-int height(struct node* node)
-{
-	if (node == NULL)
-		return 0;
-	else {
-		
-		// Compute the height of each subtree
-		int lheight = height(node->left);
-		int rheight = height(node->right);
+ vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
 
-		// Use the larger one
-		if (lheight > rheight)
-			return (lheight + 1);
-		else
-			return (rheight + 1);
-	}
-}
+        if(root==NULL)// null tree check
+            return ans;
 
-// Helper function that allocates a new node with the
-// given data and NULL left and right pointers.
-struct node* newNode(int data)
-{
-	struct node* node
-		= (struct node*)malloc(sizeof(struct node));
-	node->data = data;
-	node->left = NULL;
-	node->right = NULL;
+        queue <TreeNode*> q;
+        q.push(root);
 
-	return (node);
-}
+        while (!q.empty()){
+            vector<int> level;
 
-// Driver program to test above functions
-int main()
-{
-	struct node* root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
-	root->left->right = newNode(5);
+            int n = q.size();// IMP: gets the number of values for that level
 
-	printf("Level Order traversal of binary tree is \n");
-	printLevelOrder(root);
+            for(int i=0;i<n;i++){
+                TreeNode* temp = q.front(); 
+                q.pop();
+                level.push_back(temp->val);// added to current level
 
-	return 0;
-}
-
+                if(temp->left != NULL)
+                    q.push(temp->left);
+                if(temp->right != NULL)
+                    q.push(temp->right);
+            }
+            
+            ans.push_back(level);
+        }
+        return ans;
+    }       
 ```

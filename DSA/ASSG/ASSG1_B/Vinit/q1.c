@@ -67,12 +67,32 @@ int isEmpty(struct queue *head)
     return head == NULL;
 }
 
-void createTree(int inorder[], int preorder[], int start, int end, node root){
-    
+int search(int arr[], int start, int end, int data)
+{
+    for(int i = start; i <= end; i++)
+    {
+        if(arr[i] == data)
+        {
+            return i;
+        }
+    }
+    return -1;
 }
 
+node createTree(int inorder[], int preorder[], int i1, int e1, int i2, int e2){
+    if(i1 > e1 || i2 > e2)
+        return NULL;
 
+    node root = createNode(preorder[i2]);
 
+    int j = search(inorder, i1, e1, root->data);
+    
+    root->left = createTree(inorder, preorder, i1, j-1, i2+1, i2 + (j - i1));
+    root->right = createTree(inorder, preorder, j+1, e1, i2 + (j - i1) + 1, e2);
+
+    return root;
+
+}
 
 
 int main()
@@ -91,7 +111,35 @@ int main()
         scanf("%d", &preorder[i]);
     }
 
-    root = createTree(inorder, preorder, 0, n-1);
+    root = createTree(inorder, preorder, 0, n-1,0, n-1);
+
+    char ch;
+    while(1)
+    {
+        scanf(" %c", &ch);
+        switch(ch)
+        {
+            case 'p':
+                postorder(root);
+                break;
+            case 'z':
+                zigzag(root);
+                break;
+            case 'm':
+                levelMax(root);
+                break;
+            case 'd':
+                diameter(root);
+                break;
+            case 's':
+                leftLeafSum(root);
+                break;
+            case 'e':
+                return 0;
+        }
+    }
+
+
         
     return 0;
 }
