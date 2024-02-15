@@ -6,7 +6,7 @@
 | 3 Mirror tree	| []() | []() |
 | 4 Symmetric Tree	| []() | []() |
 | 5 Diameter of tree	| []() | []() |
-| 6 Checked for Balanced tree	| []() | []() |
+| 6 Checked for Balanced tree	| [GFG](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/) | [Code]() |
 | 7 Children Sum Parent	| []() | []() |
 | 8 Check for BST	| []() | []() |
 | 9 Array to BST	| []() | []() |
@@ -31,7 +31,7 @@
 | 21 Vertical Traversal of a Binary Tree	| []() | []() |
 | 22 Boundary Traversal	| []() | []() |
 | 23 Construct Binary Tree from Parent array	| []() | []() |
-| 24 Construct Binary Tree from Preorder and Inorder Traversal	| []() | []() |
+| 24 Construct Binary Tree from Preorder and Inorder Traversal	| [Code](./code/24.c) | [GFG](https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/) |
 | 25 Preorder Traversal and BST	| []() | []() |
 | 26 Construct tree from preorder traversal	| []() | []() |
 | 27 Minimum distance between two given nodes	| []() | []() |
