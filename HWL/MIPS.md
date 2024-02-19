@@ -50,3 +50,18 @@ array1:		.byte	'a','b'	# create a 2-element character array with elements initia
 array2:		.space	40	# allocate 40 consecutive bytes, with storage uninitialized
 				#   could be used as a 40-element character array, or a
 				#   10-element integer array; a comment should indicate which!	
+
+## How to use SYSCALL system services [Link](https://courses.missouristate.edu/kenvollmar/mars/help/syscallhelp.html)
+
+#### Step 1. Load the service number in register $v0.
+#### Step 2. Load argument values, if any, in $a0, $a1, $a2, or $f12 as specified.
+#### Step 3. Issue the ```syscall``` instruction.
+#### Step 4. Retrieve return values, if any, from result registers as specified.
+
+####  Example: display the value stored in $t0 on the console
+```MIPS
+li  $v0, 1           # service 1 is print integer
+add $a0, $t0, $zero  # load desired value into argument register $a0, using pseudo-op
+syscall
+   
+``` 
