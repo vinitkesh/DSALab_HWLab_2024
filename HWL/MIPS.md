@@ -5,14 +5,15 @@
 ### Any MIPS program has 2 sections:
 #### 1. Data Declaration
   - Placed after ```.data```
-  - declares variable names used in program; storage allocated in RAM( main memory)
+  - Declares variable names used in program; storage allocated in RAM( main memory)
 
 #### 2. Code
 - Place in ```.text```
 - Contains program code(instructions)
 - Code excutes only after ```main:```
-- ending point of main code should use exit system call
+- Ending point of main code should use exit system call
 
+**Note:** ```Code and data can be in any order```
 
 ### Template for a MIPS assembly language program:
 
