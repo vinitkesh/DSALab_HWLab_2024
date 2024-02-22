@@ -78,3 +78,5 @@ syscall
 ```
 
 [MIPS Assembly Language Examples](https://courses.cs.washington.edu/courses/cse378/03wi/lectures/mips-asm-examples.html)
+
+[Loops](https://courses.engr.illinois.edu/cs232/sp2009/section/Discussion1/disc1.pdf)
