@@ -1,6 +1,8 @@
+## MIPS installation / runtime : [Link]()
+
 ## How to write any MIPS program:
 
-[Link](https://minnie.tuhs.org/CompArch/Resources/mips_quick_tutorial.html)
+[MIPS Architecture and Assembly Language Overview](https://minnie.tuhs.org/CompArch/Resources/mips_quick_tutorial.html)
 
 ### Any MIPS program has 2 sections:
 #### 1. Data Declaration
@@ -40,16 +42,25 @@ format for declarations:
 ```name:	storage_type	value(s)	```
 create storage for variable of specified type with given name and specified value
 value(s) usually gives initial value(s); for storage type .space, gives number of spaces to be allocated
+
 Note: labels always followed by colon ( : )
 
 example
 	
-var1:		.word	3	# create a single integer variable with initial value 3
-array1:		.byte	'a','b'	# create a 2-element character array with elements initialized
-				#   to  a  and  b
-array2:		.space	40	# allocate 40 consecutive bytes, with storage uninitialized
+```asm
+var1: .word	3	
+# create a single integer variable with initial value 3  
+```
+```asm
+array1:		.byte	'a','b'	# create a 2-element character array with elements initialized  
+				#   to  a  and  b 
+```
+```asm
+array2:		.space	40	# allocate 40 consecutive bytes, with storage uninitialized  
 				#   could be used as a 40-element character array, or a
 				#   10-element integer array; a comment should indicate which!	
+```
+
 
 ## How to use SYSCALL system services [Link](https://courses.missouristate.edu/kenvollmar/mars/help/syscallhelp.html)
 
