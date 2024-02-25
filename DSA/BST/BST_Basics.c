@@ -118,23 +118,27 @@ node delete(node root, int data){
     if(root == NULL){
         return root;
     }
-    // Case 2 : If the data is smaller than the root
-    if(root-> left == NULL && root->right == NULL){
+    // Case 1: If the node to be deleted is a leaf node
+    if(root->left == NULL && root->right == NULL){
         free(root);
         return NULL;
     }
-
+    // Case 2: If the node to be deleted has only one child
     else{
+        // Find the inorder successor of the node to be deleted
         node temp = inorderSuccessor(search(root, data));
+        // Copy the data of the inorder successor to the current node
         root->data = temp->data;
+        // Delete the inorder successor node recursively
         root->right = delete(root->right, temp->data);
-
         return root;
     }
 }
 
+// Function to find the inorder successor of a given node
 node inorderSuccessor(node root){
     node temp = root;
+    // Traverse to the leftmost node to find the inorder successor
     while(temp->left != NULL){
         temp = temp->left;
     }
