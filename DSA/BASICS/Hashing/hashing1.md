@@ -35,5 +35,18 @@ keys is reasonably small**
 >#### DIRECT-ADDRESS-DELETE(T, x)  
 >#### T[key[x]] ← NIL  
 
+## Linear Probing as the Collision detection method
+
+Insertion:
+```
+while(hash[i])
+```
+
+```c
+struct 
+```
+
+
+
 
 

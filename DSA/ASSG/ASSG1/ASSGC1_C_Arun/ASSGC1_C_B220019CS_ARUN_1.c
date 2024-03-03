@@ -20,11 +20,9 @@ int hashFunction(int key)
     return key % SIZE;
 }
 
-struct HashMap *createHashmap(int maxSize)
-{
+struct HashMap *createHashmap(int maxSize){
     struct HashMap *map = (struct HashMap *)malloc(sizeof(struct HashMap));
-    for (int i = 0; i < maxSize; i++)
-    {
+    for (int i = 0; i < maxSize; i++){
         map->array[i] = NULL;
     }
     return map;
@@ -32,8 +30,7 @@ struct HashMap *createHashmap(int maxSize)
 
 struct HashMap *clearHashmap(struct HashMap *map, int maxSize)
 {
-    for (int i = 0; i < maxSize; i++)
-    {
+    for (int i = 0; i < maxSize; i++){
         map->array[i] = NULL;
     }
     return map;
@@ -43,10 +40,8 @@ int search(struct HashMap *map, int key)
 {
     int index = hashFunction(key);
 
-    while (map->array[index] != NULL)
-    {
-        if (map->array[index]->key == key)
-        {
+    while (map->array[index] != NULL){
+        if (map->array[index]->key == key){
             return 1;
         }
         index = (index + 1) % SIZE;
@@ -171,18 +166,15 @@ int main()
         {
         case 'u':
             scanf(" %c %c", &char1, &char2);
-            if (char1 == 'A' && char2 == 'B')
-            {
+            if (char1 == 'A' && char2 == 'B'){
                 unionFunc(A, B, sizeA, sizeB, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else if (char1 == 'B' && char2 == 'A')
-            {
+            else if (char1 == 'B' && char2 == 'A'){
                 unionFunc(B, A, sizeB, sizeA, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else
-            {
+            else{
                 printf("-1");
             }
             printf("\n");
@@ -190,38 +182,32 @@ int main()
 
         case 'i':
             scanf(" %c %c", &char1, &char2);
-            if (char1 == 'A' && char2 == 'B')
-            {
+            if (char1 == 'A' && char2 == 'B'){
                 intersectionFunc(A, B, sizeA, sizeB, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else if (char1 == 'B' && char2 == 'A')
-            {
+            else if (char1 == 'B' && char2 == 'A'){
                 intersectionFunc(B, A, sizeB, sizeA, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else
-            {
+            else{
                 printf("-1");
             }
-            printf("\n");
 
+            printf("\n");
             break;
 
         case 's':
             scanf(" %c %c", &char1, &char2);
-            if (char1 == 'A' && char2 == 'B')
-            {
+            if (char1 == 'A' && char2 == 'B'){
                 setDifferenceFunc(A, B, sizeA, sizeB, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else if (char1 == 'B' && char2 == 'A')
-            {
+            else if (char1 == 'B' && char2 == 'A'){
                 setDifferenceFunc(B, A, sizeB, sizeA, maxSize, map);
                 clearHashmap(map, maxSize);
             }
-            else
-            {
+            else{
                 printf("-1");
             }
             printf("\n");

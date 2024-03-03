@@ -40,11 +40,11 @@ void insert(struct HashMap *map, int key, int maxSize)
     newNode->next = NULL;
     newNode->prev = NULL;
 
-    if (map->array[index] == NULL)
+    if (map->array[index] == NULL)// empty cell
     {
         map->array[index] = newNode;
     }
-    else
+    else // Chaining
     {
         struct Node *current = map->array[index];
         while (current->next != NULL)
@@ -58,7 +58,7 @@ void insert(struct HashMap *map, int key, int maxSize)
 
 void search(struct HashMap *map, int key, int maxSize)
 {
-    int index = hashFunction(key, maxSize);
+    int index = hashFunction(key, maxSize); // finding which cell to search
     struct Node *current = map->array[index];
 
     int position = 1;
