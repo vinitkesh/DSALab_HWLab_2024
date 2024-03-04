@@ -2,13 +2,10 @@
 
 ```
 f(string, n, i_ptr){
-
 }
-
 ```
 
 ```c
-
 nodeconstructTree(char arr[], int n, int i) {
     if (i >= n || arr[i] == ')')
         return NULL;
