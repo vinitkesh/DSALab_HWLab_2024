@@ -5,7 +5,7 @@
 | 2 Determine if two trees are identical	| []() | []() |
 | 3 Mirror tree	| []() | []() |
 | 4 Symmetric Tree	| []() | []() |
-| 5 Diameter of tree	| []() | []() |
+| 5 Diameter of tree	| [Link]() | []() |
 | 6 Checked for Balanced tree	|  |  |
 | 7 Children Sum Parent	| []() | []() |
 | 8 Check for BST	| [GFG](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/) | [Notes](./notes/8_Check_BST.md) |

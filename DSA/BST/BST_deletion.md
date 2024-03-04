@@ -3,7 +3,9 @@
 ![case 2](image-1.png)
 
 ![case 3](image-2.png)
+# CASE 3 : 
 
+### Replace by Inorder successor OR Inorder predecessor
 # Inorder successor of a element in BST
 
 ### [GFG](https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/)
