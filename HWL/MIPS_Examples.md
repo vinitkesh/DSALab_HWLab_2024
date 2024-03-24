@@ -1,3 +1,11 @@
+| Program Name | Link | Code |
+| --- | --- | --- |
+| Reversing a number                | [Link]() | [Code]() |
+| Calculating average marks         | [Link]() | [Code]() |
+| Print String                      | [Link]() | [Code]() |
+
+
+
 ## Program to print some integer(without variable):
 ```asm
 .text

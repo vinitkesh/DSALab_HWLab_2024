@@ -26,6 +26,7 @@
     loop:
         lb $t0, 0($s0)   # Load the current bit
         beqz $t0, end    # If the bit is null (end of string), exit loop
+        
         sub $t0, $t0, 48 # Convert from ASCII to integer ('0' = 48)
         mul $t0, $t0, $t2  # Multiply the bit by 2^i
         add $t1, $t1, $t0  # Add the result to the decimal
