@@ -9,8 +9,8 @@ module Register #(parameter DATA_WIDTH = 8) (
     input wire reset,
     input wire read_enable,
     input wire write_enable,
-    input wire [DATA_WIDTH-1:0] write_data,
-    output wire [DATA_WIDTH-1:0] read_data
+    input wire [DATA_WIDTH-1:0] write_port_1,
+    output wire [DATA_WIDTH-1:0] read_port_1
 );
 
     reg [DATA_WIDTH-1:0] reg_data;
@@ -18,10 +18,10 @@ module Register #(parameter DATA_WIDTH = 8) (
     always @(posedge clk or posedge reset) begin
         if (reset)
             reg_data <= 0;
-        else if (write_enable)
-            reg_data <= write_data;
+        else if (write_enable) //if write is enabled
+            reg_data <= write_port_1; 
     end
 
-    assign read_data = read_enable ? reg_data : 0;
+    assign read_port_1 = read_enable ? reg_data : 0; //if read is enabled
 
 endmodule

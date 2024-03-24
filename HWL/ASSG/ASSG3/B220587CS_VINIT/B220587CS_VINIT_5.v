@@ -1,0 +1,44 @@
+
+module Q5 (
+    input wire clk,
+    input wire reset,
+
+    input wire [4:0] read_port_1,
+    input wire [4:0] read_port_2,
+    input wire [4:0] read_port_3,
+    input wire [4:0] read_port_4,
+
+    input wire [4:0] write_port_1,
+    input wire [4:0] write_port_2,
+    input wire [63:0] write_data_1,
+    input wire [63:0] write_data_2,
+    
+    output wire [63:0] dataRead_1,
+    output wire [63:0] dataRead_2,
+    output wire [63:0] dataRead_3,
+    output wire [63:0] dataRead_4
+);
+
+    reg [63:0] file [31:0];
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            for (int i = 0; i < 32; i = i + 1) begin
+                file[i] <= 0;
+            end
+        end else begin
+            if (write_port_1 != 0) begin
+                file[write_port_1] <= write_data_1;
+            end
+            if (write_port_2 != 0) begin
+                file[write_port_2] <= write_data_2;
+            end
+        end
+    end
+
+    assign data_read_1 = (read_port_1 != 0) ? file[read_port_1] : 0;
+    assign data_read_2 = (read_port_2 != 0) ? file[read_port_2] : 0;
+    assign data_read_3 = (read_port_3 != 0) ? file[read_port_3] : 0;
+    assign data_read_4 = (read_port_4 != 0) ? file[read_port_4] : 0;
+
+endmodule   
